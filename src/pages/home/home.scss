@@ -1,3 +1,17 @@
 page-home {
+	.home-events{
+		height: 50%;
+		overflow: scroll;
+		top: 0;
+		position: fixed;
+		width: 100%;
+	}
 
+	.home-chat{
+		height: 50%;
+		overflow: scroll;
+		bottom: 0;
+		position: fixed;
+		width: 100%;
+	}
 }

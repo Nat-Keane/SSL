@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Musicians
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form id="musicians-form2">
+    <ion-searchbar placeholder="Search musicians..." name="search" id="musicians-search1"></ion-searchbar>
+  </form>
+  
+  <ion-list>
+    <ion-item (click)="viewMusician(musician)" *ngFor="let musician of musicians;let i = index">
+      <ion-avatar item-start>
+        <img [src]="'assets/imgs/' + imgs[i % 5]">
+      </ion-avatar>
+      <h2>{{ musician.user_name }}</h2>
+      <p>{{ musician.user_description }}</p>
+      <button ion-button outline item-end>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

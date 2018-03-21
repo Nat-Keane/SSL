@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Venues
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="page2">
+  <form id="venues-form2">
+    <ion-searchbar placeholder="Search venues..." name="search"></ion-searchbar>
+  </form>
+  
+  <ion-list>
+    <ion-item (click)="viewVenue(venue)" *ngFor="let venue of venues; let i = index">
+      <ion-thumbnail item-start>
+        <img [src]="'assets/imgs/' + imgs[i % 4]">
+      </ion-thumbnail>
+      <h2>{{ venue.venue_name }}</h2>
+      <p>{{ venue.venue_description }}</p>
+      <button ion-button outline item-end>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
